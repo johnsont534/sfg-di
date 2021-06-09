@@ -1,0 +1,26 @@
+package guru.springframework.sfgdi.controllers;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.stereotype.Controller;
+
+import guru.springframework.sfgdi.services.ConstructorGreetingService;
+
+class ConstructorInjectedControllerTest {
+
+	ConstructorInjectedController controller;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		
+		controller = new ConstructorInjectedController(new ConstructorGreetingService());
+	}
+
+	@Test
+	void testGetGreeting() {
+		System.out.println(controller.getGreeting());
+	}
+
+}
